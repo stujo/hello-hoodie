@@ -106,3 +106,49 @@ And the app starts and a browser opens pointing to ```http://127.0.0.1:6001/```
 
 ![Screenshot](hello-hoodie-screenshot.png)
 
+#Running the App With Connectivity
+
+The javascript app communicates to the server and stores a local copy of data in the local storage
+![Local Storage](hello-hoodie-local-storage.png)
+
+#Running the App With Connectivity
+
+The javascript app continuously tries to connect to the server, but still works locally, storing
+data in local storage and marking items as dirty with typename/keyvalue
+![Local Storage](hello-hoodie-local-storage.png)
+
+#Reconnecting
+
+```
+
+
+2014-05-22T19:28:54.692Z [] GET 200 /_api/ 2ms
+2014-05-22T19:28:54.711Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 1ms
+2014-05-22T19:28:54.733Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 1ms
+2014-05-22T19:28:54.738Z [] POST 200 /_api/user%2Fwp1ydbg/_bulk_docs 1ms
+2014-05-22T19:28:54.772Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:28:54.876Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:29:19.873Z [] GET 200 /_api/ 0ms
+2014-05-22T19:29:22.874Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:29:47.878Z [] GET 200 /_api/ 0ms
+2014-05-22T19:29:50.880Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:30:15.883Z [] GET 200 /_api/ 0ms
+2014-05-22T19:30:18.886Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:30:43.890Z [] GET 200 /_api/ 0ms
+2014-05-22T19:30:46.889Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:31:11.912Z [] GET 200 /_api/ 1ms
+2014-05-22T19:31:14.911Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+2014-05-22T19:31:39.915Z [] GET 200 /_api/ 0ms
+2014-05-22T19:31:42.918Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 0ms
+
+```
+
+When the server is found again, the changes are synced with the server over ajax and dirty
+flags are cleared
+![Local Storage](hello-hoodie-reconnect.png)
+
+
+
+
+
+
