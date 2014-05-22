@@ -111,7 +111,9 @@ And the app starts and a browser opens pointing to ```http://127.0.0.1:6001/```
 The javascript app communicates to the server and stores a local copy of data in the local storage
 ![Local Storage](hello-hoodie-local-storage.png)
 
-#Running the App With Connectivity
+#Offline Operation
+
+(Simulated by stopping the server)
 
 The javascript app continuously tries to connect to the server, but still works locally, storing
 data in local storage and marking items as dirty with typename/keyvalue
@@ -119,8 +121,15 @@ data in local storage and marking items as dirty with typename/keyvalue
 
 #Reconnecting
 
+
+Server Restart:
+```
+    $ hoodie start -n
+
 ```
 
+Server Logs:
+```
 
 2014-05-22T19:28:54.692Z [] GET 200 /_api/ 2ms
 2014-05-22T19:28:54.711Z [] GET 200 /_api/user%2Fwp1ydbg/_changes 1ms
@@ -144,7 +153,7 @@ data in local storage and marking items as dirty with typename/keyvalue
 ```
 
 When the server is found again, the changes are synced with the server over ajax and dirty
-flags are cleared
+flags are cleared:
 ![Local Storage](hello-hoodie-reconnect.png)
 
 
