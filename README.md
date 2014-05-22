@@ -98,3 +98,5 @@ Success!
 
 And the app starts and a browser opens pointing to ```http://127.0.0.1:6001/```
 
+![Screenshot](hello-hoodie-screenshot.png)
+
