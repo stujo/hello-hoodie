@@ -8,16 +8,20 @@ A Hoodie Example Application - Hello World Tutorial
 
 Following: [http://hood.ie/#installation](http://hood.ie/#installation)
 
+```
   brew update
   brew install git
   brew install node
   brew install couchdb
+```
 
 That all took 5 minutes or so!
 
+```
   npm install -g hoodie-cli
 
   npm install -g local-tld
+```
 
 #Creating a New Hoodie App
 
