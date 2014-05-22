@@ -62,8 +62,9 @@ $ npm cache clean
 
 __Editor's Note:__
 I think this was because I had an already existing folder and an 
-empty git repo (for this demo, so I just deleted it, I git init'd
-and re-added the remote after the hoodie new succeeded
+empty git repo (for this demo) so I just deleted the folder completely, 
+I ```git init```'d and re-added the remote after ```hoodie new```
+succeeded
 
 Trying again:
 
